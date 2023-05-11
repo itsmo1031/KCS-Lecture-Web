@@ -1,0 +1,20 @@
+body {
+  background-color: ghostwhite;
+}
+#container {
+  width: 600px;
+  margin: 0 auto;
+}
+table,
+th,
+td {
+  border: 1px solid #222;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 10px;
+}
+th {
+  color: rgba(39, 72, 70, 0.745);
+}
