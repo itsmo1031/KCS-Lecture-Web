@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space</title>
+    <style>
+      body {
+        background-image: url(https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80);
+        background-size: auto;
+      }
+      .circle {
+        width: 10vw;
+        height: 10vw;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0.5vw 0.5vw 2vw rgb(255, 0, 115);
+        position: fixed;
+        animation: move 2s infinite alternate ease-in-out;
+      }
+      @keyframes move {
+        from {
+          bottom: 5vh;
+          left: 5vw;
+        }
+        to {
+          bottom: 80vh;
+          left: 85vw;
+          transform: scale(0.1, 0.1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="something"></div>
+  </body>
+</html>
