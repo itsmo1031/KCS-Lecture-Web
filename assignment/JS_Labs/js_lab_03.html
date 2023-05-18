@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt('숫자를 입력하세요');
+      let logic = (num, reversed = false) => {
+        for (let i = 0; i < num; i++) {
+          if (reversed) {
+            for (let j = num - i; 0 < j; j--) {
+              document.write('*');
+            }
+          } else {
+            for (let j = 0; j <= i; j++) {
+              document.write('*');
+            }
+          }
+          document.write('<br>');
+        }
+      };
+      function fun1(num) {
+        logic(num);
+      }
+      document.write('1번<br>');
+      fun1(num);
+      document.write('2번<br>');
+      var fun2 = function (num) {
+        logic(num);
+      };
+      fun2(num);
+      const fun3 = (num) => {
+        logic(num);
+      };
+      document.write('3번<br>');
+      fun3(num);
+      document.write('4번<br>');
+      (function (num) {
+        logic(num);
+      })(num);
+      document.write('5번<br>');
+      const fun5 = (num) => {
+        logic(num, true);
+      };
+      fun5(num);
+    </script>
+  </body>
+</html>
