@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8S" />
+
+    <style>
+      input[type='text'] {
+        text-align: right;
+      }
+    </style>
+
+    <title>계산기</title>
+  </head>
+
+  <body>
+    <h1>계산기</h1>
+    <b> 아래 항목에 숫자를 입력하세요 </b>
+    <form name="theForm">
+      <table>
+        <tr>
+          <td>피연산자1</td>
+          <td><input type="text" id="f1" /></td>
+        </tr>
+        <tr>
+          <td>피연산자2</td>
+          <td><input type="text" id="f2" /></td>
+        </tr>
+        <tr>
+          <td>결과값 출력</td>
+          <td><input type="text" id="f3" /></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" value="+" />
+            <input type="button" value="-" />
+            <input type="button" value="*" />
+            <input type="button" value="/" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+
+  <script>
+    const calc = (op) => {
+      const f1 = document.querySelector('#f1');
+      const f2 = document.querySelector('#f2');
+      const result = document.querySelector('#f3');
+      const str = f1.value + op + f2.value;
+      const calcResult = new Function('return ' + str);
+
+      result.value = calcResult();
+    };
+
+    document.querySelectorAll('input[type="button"]').forEach((elem) => {
+      const op = elem.getAttribute('value');
+      elem.onclick = () => {
+        calc(op);
+      };
+    });
+  </script>
+</html>
